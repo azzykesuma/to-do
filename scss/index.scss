@@ -1,0 +1,51 @@
+@import './root';
+@import './variable';
+@import 'mixin';
+
+header {
+    background-color: #C4C4C4;
+    padding : $padding;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+        // make a circle
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        background-color: #fff;
+    }
+
+    .navBtn {
+        display: flex;
+        flex-direction: column;
+        gap : 5px;
+        
+        div {
+            border-radius: 50%;
+            width: 5px;
+            height: 5px;
+            background-color: #fff; 
+        }
+    }
+}
+
+main {
+    padding : $padding;
+    background-color: $background;
+
+    img {
+        display: block;
+        margin: 5em auto;
+        max-width: 300px;
+        opacity: 0.8;
+    }
+
+    h1 {
+        font-size: $header_size;
+        font-family: $header;
+        text-align: center;
+        color : #ffff;
+    }
+}
