@@ -3,11 +3,14 @@
 @import 'mixin';
 
 header {
-    background-color: #C4C4C4;
-    padding : $padding;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    position: relative;
+    .headerWrap {
+        background-color: #C4C4C4;
+        padding : $padding;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
     .logo {
         // make a circle
@@ -21,8 +24,9 @@ header {
         display: flex;
         flex-direction: column;
         gap : 5px;
+        cursor: pointer;
         
-        div {
+        .circle {
             border-radius: 50%;
             width: 5px;
             height: 5px;
@@ -30,6 +34,33 @@ header {
         }
     }
 }
+
+.hiddenNav {
+    background-color: #616E7C;
+    width : 0;
+    height : 0;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+    transition: .3s ease-in-out;
+
+    ul {
+
+        li {
+            margin-bottom: 1em;
+            color : #fafafa;
+            cursor : pointer;
+            font-family: $taskFont;
+        }
+    }
+}
+
+.hiddenNav.open {
+    width : 14.28em;
+    height : 7.14em;
+    padding : $padding;
+}
+
 
 main {
     padding : $padding;
@@ -47,5 +78,94 @@ main {
         font-family: $header;
         text-align: center;
         color : #ffff;
+        margin-bottom: 2em;
+    }
+
+    .modalActivity {
+        transform: translateY(-20em);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: $padding;
+        background-color: #989788;
+
+        .formField {
+            display: flex;
+        }
+    }
+}
+
+footer {
+    background-color: #243B53;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    padding : $padding;
+
+    .btn-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap : 5px;
+    }
+
+    p {
+        color : #F2E9DC;
+        font-size: .8em;
+        font-family: $taskFont;
+    }
+
+    button {
+        width : 50px;
+        height : 50px;
+        background-color: #88958D;
+        border-radius: 10px;
+        border: none;
+        transition: .3s ease-in-out;
+
+        &:hover {
+            background-color: #5171A5;
+        }
+
+
+        span {
+            display : flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        img {
+            width: 20px;
+            height: 20px;
+            color : white;
+        }
+    }
+
+    .add-activity {
+        border-radius: 50%;
+        transform: translateY(-40px);
+        width : 70px;
+        height : 70px;
+
+        div {
+            width : 30px;
+            height : 3px;
+            background-color : white;
+
+            &:nth-child(1) {
+                transform: rotate(90deg);
+            }
+
+            &:nth-child(2) {
+                transform: translateY(-2px);
+            }
+        }
+    }
+
+    .activity {
+        transform: translateY(-40px);
+        font-size: 1em;
     }
 }

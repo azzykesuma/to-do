@@ -53,6 +53,9 @@ table {
 }
 
 header {
+  position: relative;
+}
+header .headerWrap {
   background-color: #C4C4C4;
   padding: 1em;
   display: -webkit-box;
@@ -80,12 +83,36 @@ header .navBtn {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 5px;
+  cursor: pointer;
 }
-header .navBtn div {
+header .navBtn .circle {
   border-radius: 50%;
   width: 5px;
   height: 5px;
   background-color: #fff;
+}
+
+.hiddenNav {
+  background-color: #616E7C;
+  width: 0;
+  height: 0;
+  position: absolute;
+  right: 0;
+  z-index: 1;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.hiddenNav ul li {
+  margin-bottom: 1em;
+  color: #fafafa;
+  cursor: pointer;
+  font-family: "Alegreya", serif;
+}
+
+.hiddenNav.open {
+  width: 14.28em;
+  height: 7.14em;
+  padding: 1em;
 }
 
 main {
@@ -103,4 +130,116 @@ main h1 {
   font-family: "Roboto Mono", monospace;
   text-align: center;
   color: #ffff;
+  margin-bottom: 2em;
+}
+main .modalActivity {
+  -webkit-transform: translateY(-20em);
+          transform: translateY(-20em);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1em;
+  background-color: #989788;
+}
+main .modalActivity .formField {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+footer {
+  background-color: #243B53;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  padding: 1em;
+}
+footer .btn-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  gap: 5px;
+}
+footer p {
+  color: #F2E9DC;
+  font-size: 0.8em;
+  font-family: "Alegreya", serif;
+}
+footer button {
+  width: 50px;
+  height: 50px;
+  background-color: #88958D;
+  border-radius: 10px;
+  border: none;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+footer button:hover {
+  background-color: #5171A5;
+}
+footer button span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+footer button img {
+  width: 20px;
+  height: 20px;
+  color: white;
+}
+footer .add-activity {
+  border-radius: 50%;
+  -webkit-transform: translateY(-40px);
+          transform: translateY(-40px);
+  width: 70px;
+  height: 70px;
+}
+footer .add-activity div {
+  width: 30px;
+  height: 3px;
+  background-color: white;
+}
+footer .add-activity div:nth-child(1) {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+footer .add-activity div:nth-child(2) {
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
+}
+footer .activity {
+  -webkit-transform: translateY(-40px);
+          transform: translateY(-40px);
+  font-size: 1em;
 }

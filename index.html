@@ -14,29 +14,76 @@
 </head>
 <body>
     <header>
-        <div class="logo"></div>
-        <div class="navBtn">
-            <div></div>
-            <div></div>
-            <div></div>
+        <div class="headerWrap">
+            <div class="logo"></div>
+            <div class="navBtn">
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+            </div>
         </div>
     </header>
+    <div class="hiddenNav">
+        <ul>
+            <li>Clear List</li>
+            <li>List View</li>
+            <li id="feedback">Feedback</li>
+        </ul>
+    </div>
     <main>
         <img src="./asset/work_illust.svg" alt="">
         <h1>Manage your time, or time will manage you</h1>
+        <div class="modalActivity">
+            <form action="">
+                <div class="formField">
+                    <label for="act">Activity</label>
+                    <input type="text" id="act"/>
+                </div>
+                <div class="formField">
+                    <p>Priority</p>
+                    <div class="formField">
+                        <input type="radio" id="low" value="low" name="priorityAct">
+                        <label for="low">Low</label>
+                        <input type="radio" id="medium" value="medium" name="priorityAct">
+                        <label for="medium">Medium</label>
+                        <input type="radio" id="high" value="high" name="priorityAct">
+                        <label for="high">High</label>
+                    </div>
+                </div>
+                <div class="formField">
+                    <label for="tag">Tag</label>
+                    <input type="text" id="tag">
+                </div>
+            </form>
+        </div>
     </main>
     <footer>
-        <button class="footer-btn"><span><img src="./asset/filter.svg" alt="">Filter</span></button>
-        <button class="footer-btn"><span><img src="./asset/completed.svg" alt="">Show Completed</span></button>
-        <button class="add-activity">
-            <span>
-                <div></div>
-                <div></div>
-            </span>
-            Add Activity
-        </button>
-        <button class="footer-btn"><span><img src="./asset/reset.svg" alt="">Reset all priority</span></button>
-        <button class="footer-btn"><span>ON</span>Toggle reminder</button>
+        <div class="btn-wrap">
+            <button class="footer-btn"><img src="./asset/filter.svg" alt=""></button>
+            <p>Filter</p>
+        </div>
+        <div class="btn-wrap">
+            <button class="footer-btn"><img src="./asset/completed.svg" alt=""></button>
+            <p>Show Completed</p>
+        </div>
+        <div class="btn-wrap">
+            <button class="add-activity">
+                <span>
+                    <div></div>
+                    <div></div>
+                </span>
+            </button>
+            <p class="activity">Add Activity</p>
+        </div>
+        <div class="btn-wrap">
+            <button class="footer-btn"><img src="./asset/reset.svg" alt=""></button>
+            <p>Reset all priority</p>
+        </div>
+        <div class="btn-wrap">
+            <button class="footer-btn">OFF</button>
+            <p>Toggle reminder</p>
+        </div>
     </footer>
+    <script src="./index.js"></script>
 </body>
 </html>
