@@ -65,6 +65,7 @@ header {
 main {
     padding : $padding;
     background-color: $background;
+    position: relative;
 
     img {
         display: block;
@@ -82,15 +83,78 @@ main {
     }
 
     .modalActivity {
+        display: none;
         transform: translateY(-20em);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
         padding: $padding;
         background-color: #989788;
 
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: $taskFont;
+        }
+
         .formField {
             display: flex;
+            justify-content: center;
+            gap : 1em;
+            width : 100%;
+            margin-bottom: 1em;
+
+            input {
+                background-color: transparent;
+                border: none;
+                border-bottom: 1px solid #fff;
+                font-family: $taskFont;
+            }
+        }
+
+        button {
+            padding : $padding;
+            font-family: $taskFont;
+            background-color: #251101;
+            border-radius: 10px;
+            border: none;
+            color : white;
+            box-shadow: 0px 6px 1px 0px rgba(0,0,0,0.75);
+
+            &:hover {
+                transform: translateY(5px);
+                box-shadow: none;
+            }
+        }
+    }
+
+    .activityWrap {
+        // display : none;
+        transform: translateY(-10em);
+        position: absolute;
+        width: 100%;
+
+        .priority {
+            width: 30px;
+            height : 30px;
+            border-radius: 50%;
+            background-color: $medium_priority;
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            max-width: 300px;
+            gap : .5em;
+            background-color: $task_background;
+            padding : $padding;
+            margin: 0 auto;
+            font-family: $taskFont;
+            color : $taskFont-color;
+            font-size: $taskFont-size;
+            margin-bottom: 1em;
+
+            ion-icon {
+                margin-left: auto;
+            }
         }
     }
 }

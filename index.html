@@ -37,11 +37,11 @@
             <form action="">
                 <div class="formField">
                     <label for="act">Activity</label>
-                    <input type="text" id="act"/>
+                    <input type="text" id="act" placeholder="Jogging for 10 minutes"/>
                 </div>
                 <div class="formField">
                     <p>Priority</p>
-                    <div class="formField">
+                    <div class="radioWrap">
                         <input type="radio" id="low" value="low" name="priorityAct">
                         <label for="low">Low</label>
                         <input type="radio" id="medium" value="medium" name="priorityAct">
@@ -52,9 +52,19 @@
                 </div>
                 <div class="formField">
                     <label for="tag">Tag</label>
-                    <input type="text" id="tag">
+                    <input type="text" id="tag" placeholder="workout">
                 </div>
+                <button type="submit" id="submit">Add Activity</button>
             </form>
+        </div>
+        <div class="activityWrap">
+            <ul id="listWrapper">
+                <li>
+                    <div class="priority"></div>
+                    Jogging for 10 minutes 
+                    <ion-icon name="close-circle-outline"></ion-icon>
+                </li>
+            </ul>
         </div>
     </main>
     <footer>
@@ -85,5 +95,7 @@
         </div>
     </footer>
     <script src="./index.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 </html>

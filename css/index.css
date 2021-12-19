@@ -118,6 +118,7 @@ header .navBtn .circle {
 main {
   padding: 1em;
   background-color: #212121;
+  position: relative;
 }
 main img {
   display: block;
@@ -133,8 +134,13 @@ main h1 {
   margin-bottom: 2em;
 }
 main .modalActivity {
+  display: none;
   -webkit-transform: translateY(-20em);
           transform: translateY(-20em);
+  padding: 1em;
+  background-color: #989788;
+}
+main .modalActivity form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -145,13 +151,72 @@ main .modalActivity {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 1em;
-  background-color: #989788;
+  font-family: "Alegreya", serif;
 }
 main .modalActivity .formField {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 1em;
+  width: 100%;
+  margin-bottom: 1em;
+}
+main .modalActivity .formField input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #fff;
+  font-family: "Alegreya", serif;
+}
+main .modalActivity button {
+  padding: 1em;
+  font-family: "Alegreya", serif;
+  background-color: #251101;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  -webkit-box-shadow: 0px 6px 1px 0px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 6px 1px 0px rgba(0, 0, 0, 0.75);
+}
+main .modalActivity button:hover {
+  -webkit-transform: translateY(5px);
+          transform: translateY(5px);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+main .activityWrap {
+  -webkit-transform: translateY(-10em);
+          transform: translateY(-10em);
+  position: absolute;
+  width: 100%;
+}
+main .activityWrap .priority {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #FF8F00;
+}
+main .activityWrap li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 300px;
+  gap: 0.5em;
+  background-color: #818D92;
+  padding: 1em;
+  margin: 0 auto;
+  font-family: "Alegreya", serif;
+  color: #FEEAFA;
+  font-size: 1em;
+  margin-bottom: 1em;
+}
+main .activityWrap li ion-icon {
+  margin-left: auto;
 }
 
 footer {
