@@ -63,6 +63,7 @@ header {
 
 
 main {
+    height : 100vh;
     padding : $padding;
     background-color: $background;
     position: relative;
@@ -84,9 +85,16 @@ main {
 
     .modalActivity {
         display: none;
-        transform: translateY(-20em);
         padding: $padding;
         background-color: #989788;
+        width: 300px;
+        height: 150px;
+        position: absolute;
+        top : 50%;
+        left : 50%;
+        margin-left: -160px;
+        margin-top: -75px;
+        z-index: 2;
 
         form {
             display: flex;
@@ -127,7 +135,6 @@ main {
     }
 
     .activityWrap {
-        // display : none;
         transform: translateY(-10em);
         position: absolute;
         width: 100%;
@@ -136,7 +143,18 @@ main {
             width: 30px;
             height : 30px;
             border-radius: 50%;
-            background-color: $medium_priority;
+        }
+        
+        .low {
+            background-color : $low_priority; 
+        }
+
+        .medium {
+            background-color : $medium_priority; 
+        }
+
+        .high {
+            background-color : $high_priority; 
         }
 
         li {
@@ -145,17 +163,20 @@ main {
             max-width: 300px;
             gap : .5em;
             background-color: $task_background;
-            padding : $padding;
+            padding : .5em;
             margin: 0 auto;
             font-family: $taskFont;
             color : $taskFont-color;
             font-size: $taskFont-size;
             margin-bottom: 1em;
+            transform: translateY(10em) translateX(-1em);
 
             ion-icon {
                 margin-left: auto;
             }
         }
+
+
     }
 }
 

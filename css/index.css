@@ -116,6 +116,7 @@ header .navBtn .circle {
 }
 
 main {
+  height: 100vh;
   padding: 1em;
   background-color: #212121;
   position: relative;
@@ -135,10 +136,16 @@ main h1 {
 }
 main .modalActivity {
   display: none;
-  -webkit-transform: translateY(-20em);
-          transform: translateY(-20em);
   padding: 1em;
   background-color: #989788;
+  width: 300px;
+  height: 150px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -160px;
+  margin-top: -75px;
+  z-index: 2;
 }
 main .modalActivity form {
   display: -webkit-box;
@@ -196,7 +203,15 @@ main .activityWrap .priority {
   width: 30px;
   height: 30px;
   border-radius: 50%;
+}
+main .activityWrap .low {
+  background-color: #5383FF;
+}
+main .activityWrap .medium {
   background-color: #FF8F00;
+}
+main .activityWrap .high {
+  background-color: #FF5252;
 }
 main .activityWrap li {
   display: -webkit-box;
@@ -208,12 +223,14 @@ main .activityWrap li {
   max-width: 300px;
   gap: 0.5em;
   background-color: #818D92;
-  padding: 1em;
+  padding: 0.5em;
   margin: 0 auto;
   font-family: "Alegreya", serif;
   color: #FEEAFA;
   font-size: 1em;
   margin-bottom: 1em;
+  -webkit-transform: translateY(10em) translateX(-1em);
+          transform: translateY(10em) translateX(-1em);
 }
 main .activityWrap li ion-icon {
   margin-left: auto;

@@ -58,18 +58,29 @@ form.addEventListener('submit', (e) => {
 function makeList(todo) {
     const listWrapper = document.getElementById('listWrapper');
     const node = document.createElement('li');
+    const backImg = document.getElementById('backImg');
+    const quotes = document.getElementById('quotes');
+    const priority = document.querySelectorAll('.priority');
     node.setAttribute('data-key', todo.id);
     node.innerHTML = 
     `
-        <li>
-            <div class="priority">${todo.priority}</div>
+            <div class="priority ${todo.priority}"></div>
             ${todo.text}
             ${todo.tag}
-            <ion-icon name="close-circle-outline"></ion-icon>
-        </li>
+            <button class='close-btn'><ion-icon name="close-circle-outline"></ion-icon></button>
     `;
     listWrapper.appendChild(node);
-    console.log(todo.text);
+    // setting the priority
+    if(todo.priority === 'low') {
+       priority.forEach(el => {
+           el.classList.add('low');
+       })
+    }
+
+    if(listWrapper !== null) {
+        backImg.style.display = 'none';
+        quotes.style.display = 'none';
+    }
 }
 
 function addList(text,tag,priority) {    
@@ -84,4 +95,15 @@ function addList(text,tag,priority) {
     makeList(todoData);
     console.log(todo);
 }
+
+// deleting list
+const listWrapper = document.getElementById('listWrapper');
+listWrapper.addEventListener('click', e => {
+    const target = e.target;
+    if(target.classList.contains('close-btn')) {
+        const itemKey = target.parentElement.dataset.key;
+        deleteList(itemKey);
+    }
+});
+
 
