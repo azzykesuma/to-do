@@ -35,7 +35,6 @@ const medium = document.getElementById('medium');
 const high = document.getElementById('high');
 
 
-
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     const act = document.getElementById('act');
@@ -62,12 +61,18 @@ function makeList(todo) {
     const quotes = document.getElementById('quotes');
     const priority = document.querySelectorAll('.priority');
     node.setAttribute('data-key', todo.id);
+
+    if(todo.deleted) {
+        item.remove();
+        return
+    }
     node.innerHTML = 
     `
             <div class="priority ${todo.priority}"></div>
             ${todo.text}
-            ${todo.tag}
-            <button class='close-btn'><ion-icon name="close-circle-outline"></ion-icon></button>
+            <div class="tag">${todo.tag}</div>
+            <button class='mark'>Mark as done</button>
+            <button class='close-btn'>Delete</button>
     `;
     listWrapper.appendChild(node);
     // setting the priority
@@ -80,6 +85,7 @@ function makeList(todo) {
     if(listWrapper !== null) {
         backImg.style.display = 'none';
         quotes.style.display = 'none';
+        console.log(`list wrapper not null`);
     }
 }
 
@@ -96,14 +102,39 @@ function addList(text,tag,priority) {
     console.log(todo);
 }
 
+
+
+
 // deleting list
 const listWrapper = document.getElementById('listWrapper');
-listWrapper.addEventListener('click', e => {
-    const target = e.target;
-    if(target.classList.contains('close-btn')) {
-        const itemKey = target.parentElement.dataset.key;
-        deleteList(itemKey);
+
+listWrapper.addEventListener('click', (e) => {
+    if(e.target.classList.contains('close-btn')) {
+        const key = e.target.parentElement.dataset.key;
+        console.log(e.target.parentElement);
+        const index = todo.findIndex(el => el.id === Number(key));
+        todo[index].deleted = true;
+        e.target.parentElement.remove();
     }
-});
+    // marking as done
+    if(e.target.classList.contains('mark')) {
+        const key = e.target.parentElement.dataset.key;
+        const index = todo.findIndex(el => el.id === Number(key));
+        todo[index].checked = true;
+        e.target.parentElement.classList.add('done');
+    }
+
+})
+
+function deleteList(item) {
+    const index = todo.findIndex(el => el.id === Number(item));
+    
+    const todoNew = {
+        deleted : true,
+        ...todo[index]
+    }
+    todo = todo.filter(el => el.id !== Number(item));
+    makeList(todoNew);
+}
 
 

@@ -196,7 +196,7 @@ main .modalActivity button:hover {
 main .activityWrap {
   -webkit-transform: translateY(-10em);
           transform: translateY(-10em);
-  position: absolute;
+  position: relative;
   width: 100%;
 }
 main .activityWrap .priority {
@@ -228,14 +228,56 @@ main .activityWrap li {
   font-family: "Alegreya", serif;
   color: #FEEAFA;
   font-size: 1em;
-  margin-bottom: 1em;
+  margin-bottom: 3em;
   -webkit-transform: translateY(10em) translateX(-1em);
           transform: translateY(10em) translateX(-1em);
 }
 main .activityWrap li ion-icon {
   margin-left: auto;
 }
-
+@media screen and (min-width: 768px) {
+  main .activityWrap li {
+    max-width: 500px;
+  }
+}
+main .activityWrap .done {
+  opacity: 0.5;
+}
+main .activityWrap .tag {
+  background-color: #C17817;
+  padding: 0.5em 1em;
+  border: none;
+  position: absolute;
+  bottom: -1.8em;
+  right: 1em;
+}
+main .activityWrap .mark {
+  background-color: #6B2D5C;
+  padding: 0.5em 1em;
+  border: none;
+  color: #fafafa;
+  position: absolute;
+  right: 6em;
+}
+main .activityWrap .mark:hover {
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+}
+main .activityWrap .close-btn {
+  background-color: #B20D30;
+  padding: 0.5em 1em;
+  border: none;
+  color: #fafafa;
+  position: absolute;
+  right: 1em;
+  cursor: pointer;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+main .activityWrap .close-btn:hover {
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+}
 footer {
   background-color: #243B53;
   display: -webkit-box;

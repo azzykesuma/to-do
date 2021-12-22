@@ -136,7 +136,7 @@ main {
 
     .activityWrap {
         transform: translateY(-10em);
-        position: absolute;
+        position: relative;
         width: 100%;
 
         .priority {
@@ -168,15 +168,64 @@ main {
             font-family: $taskFont;
             color : $taskFont-color;
             font-size: $taskFont-size;
-            margin-bottom: 1em;
+            margin-bottom: 3em;
             transform: translateY(10em) translateX(-1em);
 
             ion-icon {
                 margin-left: auto;
             }
+
+            @include mQ($tablet) {
+                max-width: 500px;
+            }
         }
 
+        .done {
+            opacity: 0.5;
+        }
 
+        .tag {
+            background-color: #C17817;
+            padding : .5em $padding;
+            border: none;
+            position: absolute;
+            bottom : -1.8em;
+            right : 1em;
+        }
+
+        .mark {
+            background-color: #6B2D5C;
+            padding : .5em $padding;
+            border: none;
+            color : #fafafa;
+            position: absolute;
+            right : 6em;
+
+            &:hover {
+                transform: translateY(2px);
+            }
+        }
+
+        .close-btn {
+            background-color: #B20D30;
+            padding : .5em $padding;
+            border: none;
+            color : #fafafa;
+            position: absolute;
+            right : 1em;
+            cursor: pointer;
+            transition: .3s ease-in-out;
+
+            &:hover {
+                transform: translateY(2px);
+            }
+        }
+        .todo-list {
+
+            .empty {
+                
+            }
+        }   
     }
 }
 
