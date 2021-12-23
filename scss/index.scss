@@ -135,7 +135,8 @@ main {
     }
 
     .activityWrap {
-        transform: translateY(-10em);
+        // background-color: red;
+        // transform: translateY(-10em);
         position: relative;
         width: 100%;
 
@@ -158,8 +159,6 @@ main {
         }
 
         li {
-            display: flex;
-            align-items: center;
             max-width: 300px;
             gap : .5em;
             background-color: $task_background;
@@ -169,7 +168,12 @@ main {
             color : $taskFont-color;
             font-size: $taskFont-size;
             margin-bottom: 3em;
-            transform: translateY(10em) translateX(-1em);
+
+            .listItemWrap {
+                display: flex;
+                align-items: center;
+            }
+
 
             ion-icon {
                 margin-left: auto;
@@ -186,11 +190,10 @@ main {
 
         .tag {
             background-color: #C17817;
-            padding : .5em $padding;
-            border: none;
-            position: absolute;
-            bottom : -1.8em;
-            right : 1em;
+            // padding : .5em $padding;
+            // border: none;
+            // bottom : -1.8em;
+            // right : 1em;
         }
 
         .mark {
@@ -220,12 +223,24 @@ main {
                 transform: translateY(2px);
             }
         }
-        .todo-list {
+      
+        .todoList:empty {
+            display: none;
+        }
 
-            .empty {
-                
+        .todoList:empty + .empty {
+            display: block;
+        }
+
+        .empty {
+            position: absolute;
+            bottom : -40em;
+            display: none;
+
+            .empty-img {
+                margin-top: 0;
             }
-        }   
+        }
     }
 }
 

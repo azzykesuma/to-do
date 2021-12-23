@@ -8,6 +8,8 @@ function openNav() {
     hiddenNav.classList.toggle('open');
 }
 
+
+
 // prompting user to enter their feedback
 const feedback = document.getElementById('feedback');
 
@@ -29,11 +31,6 @@ function openModal() {
 let todo = [];
 const form = document.querySelector('form');
 const submit = document.getElementById('submit');
-
-const low = document.getElementById('low');
-const medium = document.getElementById('medium');
-const high = document.getElementById('high');
-
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -68,11 +65,13 @@ function makeList(todo) {
     }
     node.innerHTML = 
     `
+    <div class='tag'>${todo.tag}</div>
+    <div class="listItemWrap">
             <div class="priority ${todo.priority}"></div>
             ${todo.text}
-            <div class="tag">${todo.tag}</div>
             <button class='mark'>Mark as done</button>
             <button class='close-btn'>Delete</button>
+    </div>
     `;
     listWrapper.appendChild(node);
     // setting the priority
@@ -115,6 +114,7 @@ listWrapper.addEventListener('click', (e) => {
         const index = todo.findIndex(el => el.id === Number(key));
         todo[index].deleted = true;
         e.target.parentElement.remove();
+        console.log(index);
     }
     // marking as done
     if(e.target.classList.contains('mark')) {

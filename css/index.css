@@ -194,8 +194,6 @@ main .modalActivity button:hover {
           box-shadow: none;
 }
 main .activityWrap {
-  -webkit-transform: translateY(-10em);
-          transform: translateY(-10em);
   position: relative;
   width: 100%;
 }
@@ -214,12 +212,6 @@ main .activityWrap .high {
   background-color: #FF5252;
 }
 main .activityWrap li {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   max-width: 300px;
   gap: 0.5em;
   background-color: #818D92;
@@ -229,8 +221,14 @@ main .activityWrap li {
   color: #FEEAFA;
   font-size: 1em;
   margin-bottom: 3em;
-  -webkit-transform: translateY(10em) translateX(-1em);
-          transform: translateY(10em) translateX(-1em);
+}
+main .activityWrap li .listItemWrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 main .activityWrap li ion-icon {
   margin-left: auto;
@@ -245,11 +243,6 @@ main .activityWrap .done {
 }
 main .activityWrap .tag {
   background-color: #C17817;
-  padding: 0.5em 1em;
-  border: none;
-  position: absolute;
-  bottom: -1.8em;
-  right: 1em;
 }
 main .activityWrap .mark {
   background-color: #6B2D5C;
@@ -278,6 +271,21 @@ main .activityWrap .close-btn:hover {
   -webkit-transform: translateY(2px);
           transform: translateY(2px);
 }
+main .activityWrap .todoList:empty {
+  display: none;
+}
+main .activityWrap .todoList:empty + .empty {
+  display: block;
+}
+main .activityWrap .empty {
+  position: absolute;
+  bottom: -40em;
+  display: none;
+}
+main .activityWrap .empty .empty-img {
+  margin-top: 0;
+}
+
 footer {
   background-color: #243B53;
   display: -webkit-box;
