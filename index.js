@@ -57,20 +57,23 @@ function makeList(todo) {
     const backImg = document.getElementById('backImg');
     const quotes = document.getElementById('quotes');
     const priority = document.querySelectorAll('.priority');
+    const isDone = todo.checked ? 'checked' : '';
+    const item = document.querySelector(`[data-key='${todo.id}']`);
     node.setAttribute('data-key', todo.id);
+    node.setAttribute('class', `${isDone}`);
 
     if(todo.deleted) {
         item.remove();
         return
-    }
+    } 
     node.innerHTML = 
     `
     <div class='tag'>${todo.tag}</div>
     <div class="listItemWrap">
             <div class="priority ${todo.priority}"></div>
-            ${todo.text}
-            <button class='mark'>Mark as done</button>
-            <button class='close-btn'>Delete</button>
+            <p class='activity'>${todo.text}</p>
+            <button class='mark'><ion-icon name="checkmark-circle-outline"></ion-icon></button>
+            <button class='close-btn'><ion-icon name="close-circle-outline"></ion-icon></button>
     </div>
     `;
     listWrapper.appendChild(node);
@@ -85,6 +88,11 @@ function makeList(todo) {
         backImg.style.display = 'none';
         quotes.style.display = 'none';
         console.log(`list wrapper not null`);
+    }
+    if(item) {
+        listWrapper.replaceChild(node, item);
+    } else {
+        listWrapper.appendChild(node);
     }
 }
 
@@ -109,22 +117,22 @@ const listWrapper = document.getElementById('listWrapper');
 
 listWrapper.addEventListener('click', (e) => {
     if(e.target.classList.contains('close-btn')) {
-        const key = e.target.parentElement.dataset.key;
-        console.log(e.target.parentElement);
-        const index = todo.findIndex(el => el.id === Number(key));
-        todo[index].deleted = true;
-        e.target.parentElement.remove();
-        console.log(index);
+       const itemKey = e.target.parentElement.parentElement.dataset.key;
+       deleteList(itemKey);
     }
     // marking as done
     if(e.target.classList.contains('mark')) {
-        const key = e.target.parentElement.dataset.key;
-        const index = todo.findIndex(el => el.id === Number(key));
-        todo[index].checked = true;
-        e.target.parentElement.classList.add('done');
+        const itemKey = e.target.parentElement.parentElement.dataset.key;
+        toggleDone(itemKey);
     }
 
 })
+
+function toggleDone(item) {
+    const index = todo.findIndex(el => el.id === Number(item));
+    todo[index].checked = !todo[index].checked;
+    makeList(todo[index]);
+}
 
 function deleteList(item) {
     const index = todo.findIndex(el => el.id === Number(item));
