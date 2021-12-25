@@ -365,6 +365,14 @@ footer button img {
   height: 20px;
   color: white;
 }
+footer .toggleRem.on {
+  background-color: #EE8434;
+  color: #230903;
+}
+footer .showCompleted.on {
+  background-color: #EE8434;
+  color: #230903;
+}
 footer .add-activity {
   border-radius: 50%;
   -webkit-transform: translateY(-40px);

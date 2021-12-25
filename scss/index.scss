@@ -156,6 +156,7 @@ main {
             background-color : $high_priority; 
         }
 
+
         li {
             position: relative;
             z-index: 2;
@@ -169,9 +170,9 @@ main {
             font-size: $taskFont-size;
             margin-bottom: 3em;
 
-            .listItemWrap {
+            .listItemWrap {    
                 display: flex;
-                align-items: center;
+                align-items: center;                
             }
 
 
@@ -183,6 +184,7 @@ main {
                 max-width: 500px;
             }
         }
+
 
         .checked {
             opacity: 0.5;
@@ -301,6 +303,16 @@ footer {
             height: 20px;
             color : white;
         }
+    }
+
+    .toggleRem.on {
+        background-color: #EE8434;
+        color : #230903;
+    }
+
+    .showCompleted.on {
+        background-color: #EE8434;
+        color : #230903;
     }
 
     .add-activity {

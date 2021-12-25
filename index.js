@@ -145,4 +145,61 @@ function deleteList(item) {
     makeList(todoNew);
 }
 
+// toggling reminder
+const toggleRem = document.querySelector('.toggleRem');
+toggleRem.addEventListener('click', () => {
+    toggleRem.classList.toggle('on');
+    if(toggleRem.classList.contains('on')) {
+        toggleRem.innerHTML = 'ON'
+    } else {
+        toggleRem.innerHTML = 'OFF'
+    }
+});
 
+// resetting all priorities
+const reset = document.querySelector('.reset');
+reset.addEventListener('click', () => {
+    const priority = document.querySelectorAll('.priority');
+    priority.forEach(el => {
+        el.style.backgroundColor = '#5383FF';
+    })
+});
+
+// deleting all activities
+const clearList = document.getElementById('clearList');
+clearList.addEventListener('click',deleteAll)
+
+function deleteAll() {
+    const listWrapper = document.getElementById('listWrapper');
+    const backImg = document.getElementById('backImg');
+    const quotes = document.getElementById('quotes');
+
+    todo = [];
+    listWrapper.innerHTML = '';
+    backImg.style.display = 'block';
+    quotes.style.display = 'block';
+}
+
+// show completed only
+const showCompleted = document.querySelector('.showCompleted');
+showCompleted.addEventListener('click',filterComplete)
+
+function filterComplete() {
+    showCompleted.classList.toggle('on');
+    const listWrapper = document.getElementById('listWrapper');
+    const list = listWrapper.querySelectorAll('li');
+    if(showCompleted.classList.contains('on')) {
+
+    list.forEach(el => {
+        if(!el.classList.contains('checked')) {
+            el.style.display = 'none';
+        } else {
+            el.style.display = 'block';
+        }
+    })
+    } else {
+        list.forEach(el => {
+            el.style.display = 'block';
+        })
+    }
+}

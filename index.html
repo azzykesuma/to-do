@@ -25,7 +25,7 @@
     </header>
     <div class="hiddenNav">
         <ul>
-            <li>Clear List</li>
+            <li id="clearList">Clear List</li>
             <li>List View</li>
             <li id="feedback">Feedback</li>
         </ul>
@@ -59,11 +59,7 @@
         </div>
         <div class="activityWrap">
             <ul class="todoList" id="listWrapper">
-                <!-- empty state -->
-                <div class="empty">
-                    <img class="empty-img" src="./asset/empty_state.svg" alt="">
-                    <h1 class="empty-mark">Let's add something to work for!</h1>
-                </div>
+                
             </ul>
         </div>
     </main>
@@ -73,7 +69,7 @@
             <p>Filter</p>
         </div>
         <div class="btn-wrap">
-            <button class="footer-btn"><img src="./asset/completed.svg" alt=""></button>
+            <button class="footer-btn showCompleted"><img src="./asset/completed.svg" alt=""></button>
             <p>Show Completed</p>
         </div>
         <div class="btn-wrap">
@@ -86,7 +82,7 @@
             <p class="activity">Add Activity</p>
         </div>
         <div class="btn-wrap">
-            <button class="footer-btn"><img src="./asset/reset.svg" alt=""></button>
+            <button class="footer-btn reset"><img src="./asset/reset.svg" alt=""></button>
             <p>Reset all priority</p>
         </div>
         <div class="btn-wrap">
