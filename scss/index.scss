@@ -203,6 +203,10 @@ main {
             width : 81.7vw;
             border-radius: 5px 5px 0 0;
             padding : 5px;
+            
+            @include mQ($tablet) {
+                width : 505px;
+            }
         }
 
         .mark {

@@ -256,6 +256,11 @@ main .activityWrap .tag {
   border-radius: 5px 5px 0 0;
   padding: 5px;
 }
+@media screen and (min-width: 768px) {
+  main .activityWrap .tag {
+    width: 505px;
+  }
+}
 main .activityWrap .mark {
   background-color: #6B2D5C;
   padding: 0.5em 1em;
