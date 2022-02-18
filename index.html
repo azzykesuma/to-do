@@ -15,7 +15,7 @@
 <body>
     <header>
         <div class="headerWrap">
-            <div class="logo"></div>
+            <div class="logo"><img src="./asset/logo.png" alt=""></div>
             <div class="navBtn">
                 <div class="circle"></div>
                 <div class="circle"></div>
@@ -39,6 +39,7 @@
                     <label for="act">Activity</label>
                     <input type="text" id="act" placeholder="Jogging for 10 minutes"/>
                 </div>
+                <p class="error">activity cannot be empty</p>
                 <div class="formField">
                     <p>Priority</p>
                     <div class="radioWrap">
@@ -54,7 +55,10 @@
                     <label for="tag">Tag</label>
                     <input type="text" id="tag" placeholder="workout">
                 </div>
-                <button type="submit" id="submit">Add Activity</button>
+                <div class="buttonWrapper">
+                    <button type="submit" id="submit">Add Activity</button>
+                    <button id="cancel">cancel</button>
+                </div>
             </form>
         </div>
         <div class="activityWrap">

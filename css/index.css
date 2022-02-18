@@ -68,11 +68,10 @@ header .headerWrap {
       -ms-flex-align: center;
           align-items: center;
 }
-header .logo {
+header .logo img {
   border-radius: 50%;
   width: 50px;
   height: 50px;
-  background-color: #fff;
 }
 header .navBtn {
   display: -webkit-box;
@@ -101,6 +100,7 @@ header .navBtn .circle {
   z-index: 3;
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
+  overflow-x: hidden;
 }
 .hiddenNav ul li {
   margin-bottom: 1em;
@@ -140,7 +140,7 @@ main .modalActivity {
   background-color: #989788;
   width: 300px;
   height: 150px;
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   margin-left: -160px;
@@ -177,6 +177,11 @@ main .modalActivity .formField input {
   border-bottom: 1px solid #fff;
   font-family: "Alegreya", serif;
 }
+main .modalActivity .error {
+  text-align: left;
+  color: red;
+  display: none;
+}
 main .modalActivity button {
   padding: 1em;
   font-family: "Alegreya", serif;
@@ -192,6 +197,10 @@ main .modalActivity button:hover {
           transform: translateY(5px);
   -webkit-box-shadow: none;
           box-shadow: none;
+}
+main .modalActivity #cancel {
+  background-color: #F55D3E;
+  color: white;
 }
 main .activityWrap {
   position: relative;

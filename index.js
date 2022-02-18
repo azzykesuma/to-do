@@ -32,7 +32,7 @@ let todo = [];
 const form = document.querySelector('form');
 const submit = document.getElementById('submit');
 
-form.addEventListener('submit', (e) => {
+submit.addEventListener('click', (e) => {
     e.preventDefault();
     const act = document.getElementById('act');
     const actVal = act.value.trim();
@@ -40,15 +40,21 @@ form.addEventListener('submit', (e) => {
     const tagVal = tag.value.trim();
     const priority = document.querySelector('input[name="priorityAct"]:checked');
     const priorityVal = priority.value;
+    const error = document.querySelector('.error');
+    const modalActivity = document.querySelector('.modalActivity');
 
     if(actVal !== '') {
+        console.log(actVal);
         addList(actVal,tagVal,priorityVal);
         act.value = '';
         tag.value = '';
         act.focus();
+        modalActivity.style.display = 'none';
+    } else {
+        act.focus();
+        error.style.display = 'block';
+        modalActivity.style.display = 'block';
     }
-    const modalActivity = document.querySelector('.modalActivity');
-    modalActivity.style.display = 'none';
 })
 
 function makeList(todo) {
@@ -108,6 +114,15 @@ function addList(text,tag,priority) {
     makeList(todoData);
     console.log(todo);
 }
+
+// cancel button 
+const cancel = document.getElementById('cancel');
+cancel.addEventListener('click', (e) => {
+    e.preventDefault();
+    const modalActivity = document.querySelector('.modalActivity');
+    modalActivity.style.display = 'none';
+    console.log(`cancel`);
+})
 
 
 
