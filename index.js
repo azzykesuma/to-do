@@ -9,15 +9,6 @@ function openNav() {
 }
 
 
-
-// prompting user to enter their feedback
-const feedback = document.getElementById('feedback');
-
-feedback.addEventListener('click', promptFeedback);
-function promptFeedback() {
-    prompt('Please enter your feedback');
-}
-
 // opening add activity modal
 const addActivity = document.querySelector('.add-activity');
 addActivity.addEventListener('click', openModal);
@@ -181,8 +172,10 @@ reset.addEventListener('click', () => {
 });
 
 // deleting all activities
-const clearList = document.getElementById('clearList');
-clearList.addEventListener('click',deleteAll)
+const clearList = document.querySelectorAll('.clearList');
+clearList.forEach(list => {
+    list.addEventListener('click',deleteAll);
+})
 
 function deleteAll() {
     const listWrapper = document.getElementById('listWrapper');

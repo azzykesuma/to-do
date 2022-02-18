@@ -34,6 +34,34 @@ header {
             height: 5px;
             background-color: #fff; 
         }
+
+        @include mQ($tablet) {
+            display: none;
+        }
+    }
+
+    .tabletNav {
+        display: none;
+
+        ul {
+            display: flex;
+            gap : 1em;
+        }
+
+        li {
+            font-size: 1em;
+            font-family: $header;
+            cursor: pointer;
+            color : #1D1A31;
+        }
+        @include mQ($tablet) {
+            display: block;
+        }
+    }
+
+    a {
+        text-decoration: none;
+        color: #1D1A31;
     }
 }
 
