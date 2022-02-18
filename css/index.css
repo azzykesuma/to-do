@@ -120,6 +120,11 @@ header a {
   color: #1D1A31;
 }
 
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
 .hiddenNav {
   background-color: #616E7C;
   width: 0;

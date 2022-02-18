@@ -112,7 +112,6 @@ cancel.addEventListener('click', (e) => {
     e.preventDefault();
     const modalActivity = document.querySelector('.modalActivity');
     modalActivity.style.display = 'none';
-    console.log(`cancel`);
 })
 
 
